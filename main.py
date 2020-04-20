@@ -9,7 +9,7 @@ if __name__ == "__main__":
     post  = []
     x = np.random.normal(size=sample_num)
     for a in np.linspace(1,10,num=200):
-        post.append(pdfs.likelihood(pdfs.gauspdf,a,*x))
+        post.append(pdfs.posterior(a,pdfs.likelihood,pdfs.gauspdf,*x))
     
     plt.plot(np.linspace(1,10,num=200),post)
     plt.ylabel("Posterior probability density")

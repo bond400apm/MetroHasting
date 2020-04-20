@@ -13,5 +13,5 @@ def likelihood(funcs,parameter,*data):
     return L
 
 def posterior(a,likelihood,funcs,prior=1.0,normalization=1.0,*data):
-    P = likelihood(funcs,a,data)*prior/normalization
+    P = likelihood(funcs,a,*data)*prior/normalization
     return P
